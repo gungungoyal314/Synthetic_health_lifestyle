@@ -1,0 +1,34 @@
+{
+  "Age": 45,
+  "Gender": 1,
+  "Height_cm": 170,
+  "Weight_kg": 75,
+  "BMI": 28,
+  "Smoker": 1,
+  "Exercise_Freq": 2,
+  "Diet_Quality": 2,
+  "Alcohol_Consumption": 1,
+  "Chronic_Disease": 0,
+  "Stress_Level": 7,
+  "Sleep_Hours": 6
+}
+
+
+
+
+import requests
+
+url = "http://127.0.0.1:5000/predict"
+
+data = {
+    "Age": 45,
+    "BMI": 28,
+    "Physical_Activity": 2,
+    "Smoking": 1,
+    "Alcohol": 0,
+    "Sleep_Hours": 6,
+    "Stress_Level": 7
+}
+
+response = requests.post(url, json=data)
+print(response.json())
